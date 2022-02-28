@@ -81,6 +81,58 @@ kube-scheduler-arg: "{{ kube_scheduler_arg }}"
 {% endif %}
 
 #
+# db
+#
+{% if cluster_reset_restore_path is defined %}
+cluster-reset-restore-path: "{{ cluster_reset_restore_path }}"
+{% endif %}
+{% if etcd_expose_metrics is defined and etcd_expose_metrics | bool %}
+etcd-expose-metrics: 'true'
+{% endif %}
+{% if etcd_disable_snapshots is defined and etcd_disable_snapshots | bool %}
+etcd-disable-snapshots: 'true'
+{% endif %}
+{% if etcd_snapshot_name is defined %}
+etcd-snapshot-name: "{{ etcd_snapshot_name }}"
+{% endif %}
+{% if etcd_snapshot_schedule_cron is defined %}
+etcd-snapshot-schedule-cron: "{{ etcd_snapshot_schedule_cron }}"
+{% endif %}
+{% if etcd_snapshot_retention is defined %}
+etcd-snapshot-retention: "{{ etcd_snapshot_retention }}"
+{% endif %}
+{% if etcd_snapshot_dir is defined %}
+etcd-snapshot-dir: "{{ etcd_snapshot_dir }}"
+{% endif %}
+{% if etcd_s3 is defined and etcd_s3 | bool %}
+etcd-s3: 'true'
+{% endif %}
+{% if etcd_s3_endpoint is defined %}
+etcd-s3-endpoint: "{{ etcd_s3_endpoint }}"
+{% endif %}
+{% if etcd_s3_endpoint_ca is defined %}
+etcd-s3-endpoint-ca: "{{ etcd_s3_endpoint_ca }}"
+{% endif %}
+{% if etcd_s3_skip_ssl_verify is defined and etcd_s3_skip_ssl_verify | bool %}
+etcd-s3-skip-ssl-verify: 'true'
+{% endif %}
+{% if etcd_s3_access_key is defined %}
+etcd-s3-access-key: "{{ etcd_s3_access_key }}"
+{% endif %}
+{% if etcd_s3_secret_key is defined %}
+etcd-s3-secret-key: "{{ etcd_s3_secret_key }}"
+{% endif %}
+{% if etcd_s3_bucket is defined %}
+etcd-s3-bucket: "{{ etcd_s3_bucket }}"
+{% endif %}
+{% if etcd_s3_region is defined %}
+etcd-s3-region: "{{ etcd_s3_region }}"
+{% endif %}
+{% if etcd_s3_folder is defined %}
+etcd-s3-folder: "{{ etcd_s3_folder }}"
+{% endif %}
+
+#
 # components
 #
 {% if disable_something is defined %}
