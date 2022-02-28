@@ -165,6 +165,34 @@ protect-kernel-defaults: 'true'
 {% endif %}
 
 #
+# image
+#
+{% if system_default_registry is defined %}
+system-default-registry: "{{ system_default_registry }}"
+{% endif %}
+{% if kube_apiserver_image is defined %}
+kube-apiserver-image: "{{ kube_apiserver_image }}"
+{% endif %}
+{% if kube_controller_manager_image is defined %}
+kube-controller-manager-image: "{{ kube_controller_manager_image }}"
+{% endif %}
+{% if kube_proxy_image is defined %}
+kube-proxy-image: "{{ kube_proxy_image }}"
+{% endif %}
+{% if kube_scheduler_image is defined %}
+kube-scheduler-image: "{{ kube_scheduler_image }}"
+{% endif %}
+{% if pause_image is defined %}
+pause-image: "{{ pause_image }}"
+{% endif %}
+{% if runtime_image is defined %}
+runtime-image: "{{ runtime_image }}"
+{% endif %}
+{% if etcd_image is defined %}
+etcd-image: "{{ etcd_image }}"
+{% endif %}
+
+#
 # experimental/cluster
 #
 {% if agent_token is defined %}
