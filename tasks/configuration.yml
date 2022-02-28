@@ -1,0 +1,29 @@
+---
+# install_rke2/tasks/configuration.yml
+
+#
+# Configuration files
+#
+
+- name: 'Create directories'
+  file:
+    path: "{{ item }}"
+    state: 'directory'
+    owner: 'root'
+    group: 'root'
+    mode: '0755'
+  loop:
+    - '/etc/rancher/'
+    - '/etc/rancher/rke2/'
+  notify:
+    - 'Restart the rke2 service'
+
+- name: 'Create the configuration file'
+  template:
+    src: 'config.yaml.j2'
+    dest: '/etc/rancher/rke2/config.yaml'
+    owner: 'root'
+    group: 'root'
+    mode: '0640'
+  notify:
+    - 'Restart the rke2 service'
