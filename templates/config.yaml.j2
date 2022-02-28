@@ -163,3 +163,19 @@ kube-proxy-arg: "{{ kube_proxy_arg }}"
 {% if protect_kernel_defaults is defined and protect_kernel_defaults | bool %}
 protect-kernel-defaults: 'true'
 {% endif %}
+
+#
+# experimental/cluster
+#
+{% if agent_token is defined %}
+agent-token: "{{ agent_token }}"
+{% endif %}
+{% if agent_token_file is defined %}
+agent-token-file: "{{ agent_token_file }}"
+{% endif %}
+{% if server_url is defined %}
+server: "{{ server_url }}"
+{% endif %}
+{% if cluster_reset is defined and cluster_reset | bool %}
+cluster-reset: 'true'
+{% endif %}
