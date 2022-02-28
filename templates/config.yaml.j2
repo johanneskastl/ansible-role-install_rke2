@@ -1,3 +1,19 @@
 #
 # {{ ansible_managed }}
 #
+
+#
+# listener
+#
+{% if bind_address is defined %}
+bind-address: "{{ bind_address }}"
+{% endif %}
+{% if advertise_address is defined %}
+advertise-address: "{{ advertise_address }}"
+{% endif %}
+{% if tls_san is defined %}
+tls-san:
+{% for line in tls_san %}
+  - "{{ line }}"
+{% endfor %}
+{% endif %}
