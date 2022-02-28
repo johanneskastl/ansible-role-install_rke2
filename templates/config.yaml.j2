@@ -43,3 +43,13 @@ cluster-dns: "{{ cluster_dns }}"
 {% if cluster_domain is defined %}
 cluster-domain: "{{ cluster_domain }}"
 {% endif %}
+
+#
+# cluster
+#
+{% if token is defined %}
+token: "{{ token }}"
+{% endif %}
+{% if token_file is defined %}
+token-file: "{{ token_file }}"
+{% endif %}
