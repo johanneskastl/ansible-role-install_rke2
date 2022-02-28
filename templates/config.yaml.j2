@@ -200,6 +200,13 @@ secrets-encryption: 'true'
 {% endif %}
 
 #
+# experimental/agent
+#
+{% if kubelet_path is defined %}
+kubelet-path: "{{ kubelet_path }}"
+{% endif %}
+
+#
 # experimental/cluster
 #
 {% if agent_token is defined %}
