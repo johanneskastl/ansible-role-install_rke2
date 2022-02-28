@@ -1,0 +1,24 @@
+---
+# install_rke2/defaults/main.yml
+
+# role logic
+fetch_token: 'false'
+
+# default name used on amd64 architecture
+rke2_binary_download_name: 'rke2.linux-amd64'
+rke2_sha256sum_download_name: 'sha256sum-amd64.txt'
+
+# default for type of node
+rke2_node_type: 'server'
+uninstall_script_name: 'rke2-uninstall.sh'
+
+# ignore errors
+ignore_errors_when_binary_downloaded: 'false'
+
+# directories
+path_to_install_to: '/usr/local'
+systemd_directory_path: '/usr/local/lib/systemd/system'
+
+# rke2 releases
+rke2_installation_url: 'https://update.rke2.io/v1-release/channels'
+rke2_installation_channel: 'stable'
