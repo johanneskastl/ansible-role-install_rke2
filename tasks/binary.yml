@@ -29,7 +29,7 @@
 - name: 'Download rke2 binary'
   get_url:
     url: "https://github.com/rancher/rke2/releases/download/{{ rke2_version }}/{{ rke2_binary_download_name }}"
-    dest: "{{ path_to_install_to }}/rke2"
+    dest: "{{ path_to_install_to }}/bin/rke2"
     checksum: "sha256:https://github.com/rancher/rke2/releases/download/{{ rke2_version }}/{{ rke2_sha256sum_download_name }}"
     owner: 'root'
     group: 'root'
@@ -49,7 +49,7 @@
   ansible.builtin.file:
     # links are relative, not absolute, so only giving 'rke2' as source here is intended...
     src: 'rke2'
-    dest: "{{ path_to_install_to }}/{{ item }}"
+    dest: "{{ path_to_install_to }}/bin/{{ item }}"
     state: 'link'
     owner: 'root'
     group: 'root'
