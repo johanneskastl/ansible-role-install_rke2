@@ -1,0 +1,11 @@
+---
+# install_rke2/handlers/main.yml
+
+- name: 'Trigger systemctl daemon-reload'
+  ansible.builtin.systemd:
+    daemon_reload: 'yes'
+
+- name: 'Restart the rke2 service'
+  service:
+    name: "rke2-{{ rke2_node_type }}.service"
+    state: 'restarted'
