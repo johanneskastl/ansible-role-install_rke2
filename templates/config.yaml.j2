@@ -53,3 +53,13 @@ token: "{{ token }}"
 {% if token_file is defined %}
 token-file: "{{ token_file }}"
 {% endif %}
+
+#
+# client
+#
+{% if write_kubeconfig is defined %}
+write-kubeconfig: "{{ write_kubeconfig }}"
+{% endif %}
+{% if write_kubeconfig_mode is defined %}
+write-kubeconfig-mode: "{{ write_kubeconfig_mode }}"
+{% endif %}
