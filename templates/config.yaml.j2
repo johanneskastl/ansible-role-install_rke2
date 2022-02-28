@@ -95,6 +95,48 @@ disable-cloud-controller: 'true'
 {% if disable_kube_proxy is defined and disable_kube_proxy | bool %}
 disable-kube-proxy: 'true'
 {% endif %}
+{% if control_plane_resource_requests is defined %}
+control-plane-resource-requests: "{{ control_plane_resource_requests }}"
+{% endif %}
+{% if control_plane_resource_limits is defined %}
+control-plane-resource-limits: "{{ control_plane_resource_limits }}"
+{% endif %}
+{% if kube_apiserver_extra_mount is defined %}
+kube-apiserver-extra-mount: "{{ kube_apiserver_extra_mount }}"
+{% endif %}
+{% if kube_scheduler_extra_mount is defined %}
+kube-scheduler-extra-mount: "{{ kube_scheduler_extra_mount }}"
+{% endif %}
+{% if kube_controller_manager_extra_mount is defined %}
+kube-controller-manager-extra-mount: "{{ kube_controller_manager_extra_mount }}"
+{% endif %}
+{% if kube_proxy_extra_mount is defined %}
+kube-proxy-extra-mount: "{{ kube_proxy_extra_mount }}"
+{% endif %}
+{% if etcd_extra_mount is defined %}
+etcd-extra-mount: "{{ etcd_extra_mount }}"
+{% endif %}
+{% if cloud_controller_manager_extra_mount is defined %}
+cloud-controller-manager-extra-mount: "{{ cloud_controller_manager_extra_mount }}"
+{% endif %}
+{% if kube_apiserver_extra_env is defined %}
+kube-apiserver-extra-env: "{{ kube_apiserver_extra_env }}"
+{% endif %}
+{% if kube_scheduler_extra_env is defined %}
+kube-scheduler-extra-env: "{{ kube_scheduler_extra_env }}"
+{% endif %}
+{% if kube_controller_manager_extra_env is defined %}
+kube-controller-manager-extra-env: "{{ kube_controller_manager_extra_env }}"
+{% endif %}
+{% if kube_proxy_extra_env is defined %}
+kube-proxy-extra-env: "{{ kube_proxy_extra_env }}"
+{% endif %}
+{% if etcd_extra_env is defined %}
+etcd-extra-env: "{{ etcd_extra_env }}"
+{% endif %}
+{% if cloud_controller_manager_extra_env is defined %}
+cloud-controller-manager-extra-env: "{{ cloud_controller_manager_extra_env }}"
+{% endif %}
 
 #
 # agent/node
