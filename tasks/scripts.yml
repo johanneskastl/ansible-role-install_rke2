@@ -8,7 +8,7 @@
 - name: 'Create the uninstall script'
   template:
     src: 'rke2-uninstall.sh.j2'
-    dest: "{{ path_to_install_to }}/rke2-uninstall.sh"
+    dest: "{{ path_to_install_to }}/bin/rke2-uninstall.sh"
     owner: 'root'
     group: 'root'
     mode: '0755'
@@ -16,7 +16,7 @@
 - name: 'Create the killall script'
   template:
     src: 'rke2-killall.sh.j2'
-    dest: '{{ path_to_install_to }}/rke2-killall.sh'
+    dest: '{{ path_to_install_to }}/bin/rke2-killall.sh'
     owner: 'root'
     group: 'root'
     mode: '0755'
