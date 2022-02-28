@@ -156,3 +156,10 @@ kubelet-arg: "{{ kubelet_arg }}"
 {% if kube_proxy_arg is defined %}
 kube-proxy-arg: "{{ kube_proxy_arg }}"
 {% endif %}
+
+#
+# agent/node
+#
+{% if protect_kernel_defaults is defined and protect_kernel_defaults | bool %}
+protect-kernel-defaults: 'true'
+{% endif %}
