@@ -28,10 +28,5 @@ RestartSec=5s
 ExecStartPre=/bin/sh -xc '! /usr/bin/systemctl is-enabled --quiet nm-cloud-setup.service'
 ExecStartPre=-/sbin/modprobe br_netfilter
 ExecStartPre=-/sbin/modprobe overlay
-ExecStart={{ path_to_install_to }}/bin/rke2 \
-    agent \
-{% if kubelet_arg is defined %}
-       '--kubelet-arg={{ kubelet_arg }}'
-{% endif %}
-
+ExecStart={{ path_to_install_to }}/bin/rke2 agent
 ExecStopPost=-/bin/sh -c "systemd-cgls /system.slice/%n | grep -Eo '[0-9]+ (containerd|kubelet)' | awk '{print $1}' | xargs -r kill"
