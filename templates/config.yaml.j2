@@ -179,3 +179,10 @@ server: "{{ server_url }}"
 {% if cluster_reset is defined and cluster_reset | bool %}
 cluster-reset: 'true'
 {% endif %}
+
+#
+# experimental
+#
+{% if secrets_encryption is defined and secrets_encryption | bool %}
+secrets-encryption: 'true'
+{% endif %}
