@@ -1,0 +1,12 @@
+---
+# install_rke2/tasks/token.yml
+
+#
+# token
+#
+- name: 'Fetch token to Ansible control node'
+  fetch:
+    src: "{{ data_dir | default('/var/lib/rancher/rke2') }}/server/node-token"
+    dest: 'rke2-token'
+    mode: '0600'
+    flat: 'yes'
