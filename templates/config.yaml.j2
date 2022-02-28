@@ -79,3 +79,19 @@ kube-controller-manager-arg: "{{ kube_controller_manager_arg }}"
 {% if kube_scheduler_arg is defined %}
 kube-scheduler-arg: "{{ kube_scheduler_arg }}"
 {% endif %}
+
+#
+# components
+#
+{% if disable_something is defined %}
+disable: "{{ disable_something }}"
+{% endif %}
+{% if disable_scheduler is defined and disable_scheduler | bool %}
+disable-scheduler: 'true'
+{% endif %}
+{% if disable_cloud_controller is defined and disable_cloud_controller | bool %}
+disable-cloud-controller: 'true'
+{% endif %}
+{% if disable_kube_proxy is defined and disable_kube_proxy | bool %}
+disable-kube-proxy: 'true'
+{% endif %}
