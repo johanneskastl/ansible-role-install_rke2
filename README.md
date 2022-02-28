@@ -64,6 +64,10 @@ Depending on your host, you might want to set the tls_san variable to contain an
           - 'ip-of-loadbalancer-goes-here'
 ```
 
+Example playbooks for a 'three-server' setup and a 'one server and three agents' can be found here:
+- [three-server setup](https://github.com/johanneskastl/rke2_three_servers_with_vagrant_libvirt/blob/main/ansible/playbook-vagrant.yml)
+- [one server and three agents](https://github.com/johanneskastl/rke2_one_server_three_agents_with_vagrant_libvirt/blob/main/ansible/playbook-vagrant.yml)
+
 License
 -------
 
