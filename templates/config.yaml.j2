@@ -193,6 +193,16 @@ etcd-image: "{{ etcd_image }}"
 {% endif %}
 
 #
+# cloud provider
+#
+{% if cloud_provider_name is defined %}
+cloud-provider-name: "{{ cloud_provider_name }}"
+{% endif %}
+{% if cloud_provider_config is defined %}
+cloud-provider-config: "{{ cloud_provider_config }}"
+{% endif %}
+
+#
 # experimental
 #
 {% if secrets_encryption is defined and secrets_encryption | bool %}
