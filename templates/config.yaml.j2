@@ -203,6 +203,16 @@ cloud-provider-config: "{{ cloud_provider_config }}"
 {% endif %}
 
 #
+# security
+#
+{% if profile is defined %}
+profile: "{{ profile }}"
+{% endif %}
+{% if audit_policy_file is defined %}
+audit-policy-file: "{{ audit_policy_file }}"
+{% endif %}
+
+#
 # experimental
 #
 {% if secrets_encryption is defined and secrets_encryption | bool %}
