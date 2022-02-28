@@ -1,0 +1,8 @@
+---
+# install_rke2/tasks/set_facts.yml
+
+- name: 'Install into /usr/ on Redhat/CentOS/AlmaLinux/RockyLinux'
+  set_fact:
+    path_to_install_to: '/usr'
+  when:
+    - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
