@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: 'install_rke2'
+  namespace: 'johanneskastl'
   author: 'Johannes Kastl'
   description: 'Install rke2 (without downloading and executing shell code with root permissions)'
   company: 'B1 Systems GmbH'
