@@ -1,3 +1,5 @@
+![Ansible Lint](https://github.com/johanneskastl/ansible-role-install_rke2/workflows/Ansible%20Lint/badge.svg)
+
 install_rke2
 =========
 
