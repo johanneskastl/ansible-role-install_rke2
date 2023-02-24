@@ -49,8 +49,7 @@ If you want to have a different rke2 version, use something like this:
 - hosts: some_hostname
   roles:
     - role: 'johanneskastl.install_rke2'
-      vars:
-        rke2_version: 'v1.22.7+rke2r1'
+      rke2_version: 'v1.22.7+rke2r1'
 ```
 
 Depending on your host, you might want to set the tls_san variable to contain any external IPs or hostnames or similar.
@@ -58,12 +57,11 @@ Depending on your host, you might want to set the tls_san variable to contain an
 - hosts: some_hostname
   roles:
     - role: 'johanneskastl.install_rke2'
-      vars:
-        rke2_version: 'v1.22.7+rke2r1'
-        tls_san:
-          - 'host.example.org'
-          - 'k3s.example.org'
-          - 'ip-of-loadbalancer-goes-here'
+      rke2_version: 'v1.22.7+rke2r1'
+      tls_san:
+        - 'host.example.org'
+        - 'k3s.example.org'
+        - 'ip-of-loadbalancer-goes-here'
 ```
 
 Example playbooks for a 'three-server' setup and a 'one server and three agents' can be found here:
