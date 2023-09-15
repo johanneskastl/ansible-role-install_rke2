@@ -6,7 +6,7 @@
 #
 
 - name: 'Create the uninstall script'
-  template:
+  ansible.builtin.template:
     src: 'rke2-uninstall.sh.j2'
     dest: "{{ path_to_install_to }}/bin/rke2-uninstall.sh"
     owner: 'root'
@@ -14,7 +14,7 @@
     mode: '0755'
 
 - name: 'Create the killall script'
-  template:
+  ansible.builtin.template:
     src: 'rke2-killall.sh.j2'
     dest: '{{ path_to_install_to }}/bin/rke2-killall.sh'
     owner: 'root'
