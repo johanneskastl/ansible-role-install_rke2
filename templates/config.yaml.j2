@@ -257,6 +257,9 @@ kube-proxy-arg: "{{ kube_proxy_arg }}"
 {% if protect_kernel_defaults is defined and protect_kernel_defaults | bool %}
 protect-kernel-defaults: 'true'
 {% endif %}
+{% if lb_server_port is defined and lb_server_port | bool %}
+lb-server-port: "{{ lb_server_port }}"
+{% endif %}
 
 #
 # image
