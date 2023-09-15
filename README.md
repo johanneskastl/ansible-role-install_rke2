@@ -19,8 +19,9 @@ Many.
 Basically most options that can be handed over to rke2 when installing via the
 script being curled and piped to bash, can be set as variables that will be put
 into the `config.yaml` file.
-The only special one is `disable_something` (the CLI option is called `disable`,
-but that makes a horrible variable name).
+The only special ones are `disable_something` (the CLI option is called `disable`,
+but that makes a horrible variable name) and `server_url`, where the CLI option
+is called `server`...
 
 If you want to have a specific version of rke2 installed, setting `rke2_version`
 will do that (see the example playbook below).
