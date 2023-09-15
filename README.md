@@ -21,7 +21,7 @@ The only special one is `disable_something` (the CLI option is called `disable`,
 If you want to have a specific version of rke2 installed, settings `rke2_version` will do that (see the example playbook below).
 
 In case you want to override the default locations, these two variables can be set:
-- `path_to_install_to`: defaults to `/usr/local` or `usr` on RHEL/CentOS/AlmaLinux/RockyLinux
+- `path_to_install_to`: defaults to `/usr/local` or `/usr` on RHEL/CentOS/AlmaLinux/RockyLinux
 - `systemd_directory_path`: defaults to `/usr/local/lib/systemd/system`
 
 If you know why you would want that, feel free to use a different URL or channel. Here are the defaults:
