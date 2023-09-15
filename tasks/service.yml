@@ -16,7 +16,7 @@
     - 'Trigger systemctl daemon-reload'
     - 'Restart the rke2 service'
 
-- name: "Create the env file rke2-{{ rke2_node_type }}.env"
+- name: "Create the env file for rke2-{{ rke2_node_type }}"
   ansible.builtin.template:
     src: "rke2-{{ rke2_node_type }}.env.j2"
     dest: "{{ systemd_directory_path }}/rke2-{{ rke2_node_type }}.env"
@@ -27,7 +27,7 @@
     - 'Trigger systemctl daemon-reload'
     - 'Restart the rke2 service'
 
-- name: "Create systemd service file rke2-{{ rke2_node_type }}.service"
+- name: "Create systemd service file for rke2-{{ rke2_node_type }}"
   ansible.builtin.template:
     src: 'rke2-{{ rke2_node_type }}.service.j2'
     dest: "{{ systemd_directory_path }}/rke2-{{ rke2_node_type }}.service"
