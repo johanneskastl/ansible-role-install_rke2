@@ -49,4 +49,4 @@
   ansible.builtin.service:
     name: "rke2-{{ rke2_node_type }}.service"
     state: 'started'
-    enabled: 'true'
+    enabled: true
