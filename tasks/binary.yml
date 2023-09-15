@@ -14,9 +14,9 @@
   ansible.builtin.uri:
     url: "{{ rke2_installation_url }}/{{ rke2_installation_channel }}"
   delegate_to: 'localhost'
-  become: 'false'
-  changed_when: 'false'
-  check_mode: 'false'
+  become: false
+  changed_when: false
+  check_mode: false
   register: get_rke2_version
   when:
     - 'rke2_version is undefined'
