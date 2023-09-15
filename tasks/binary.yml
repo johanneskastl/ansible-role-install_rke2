@@ -21,7 +21,8 @@
   when:
     - 'rke2_version is undefined'
 
-- ansible.builtin.set_fact:
+- name: 'Store rke2 version in variable'
+  ansible.builtin.set_fact:
     rke2_version: "{{ get_rke2_version.url | basename }}"
   when:
     - 'rke2_version is undefined'
