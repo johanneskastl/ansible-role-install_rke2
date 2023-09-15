@@ -315,9 +315,6 @@ audit-policy-file: "{{ audit_policy_file }}"
 #
 # experimental
 #
-{% if secrets_encryption is defined and secrets_encryption | bool %}
-secrets-encryption: 'true'
-{% endif %}
 
 #
 # experimental/agent
