@@ -11,7 +11,7 @@
 # with version_url being defined as "${INSTALL_RKE2_CHANNEL_URL}/${INSTALL_RKE2_CHANNEL}"
 
 - name: 'Detect latest kubernetes version, unless specified by the user'
-  uri:
+  ansible.builtin.uri:
     url: "{{ rke2_installation_url }}/{{ rke2_installation_channel }}"
   delegate_to: 'localhost'
   become: 'false'
@@ -21,13 +21,13 @@
   when:
     - 'rke2_version is undefined'
 
-- set_fact:
+- ansible.builtin.set_fact:
     rke2_version: "{{ get_rke2_version.url | basename }}"
   when:
     - 'rke2_version is undefined'
 
 - name: 'Download rke2 binary'
-  get_url:
+  ansible.builtin.get_url:
     url: "https://github.com/rancher/rke2/releases/download/{{ rke2_version }}/{{ rke2_binary_download_name }}"
     dest: "{{ path_to_install_to }}/bin/rke2"
     checksum: "sha256:https://github.com/rancher/rke2/releases/download/{{ rke2_version }}/{{ rke2_sha256sum_download_name }}"
@@ -39,7 +39,7 @@
     - 'Restart the rke2 service'
 
 - name: 'Set fact to ignore errors in check mode, if binary would be downloaded'
-  set_fact:
+  ansible.builtin.set_fact:
     ignore_errors_when_binary_downloaded: 'true'
   when:
     - 'download_binary.changed | bool'
