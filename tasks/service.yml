@@ -6,7 +6,7 @@
 #
 
 - name: 'Create directories'
-  file:
+  ansible.builtin.file:
     path: "{{ systemd_directory_path }}"
     state: 'directory'
     owner: 'root'
@@ -17,7 +17,7 @@
     - 'Restart the rke2 service'
 
 - name: "Create the env file rke2-{{ rke2_node_type }}.env"
-  template:
+  ansible.builtin.template:
     src: "rke2-{{ rke2_node_type }}.env.j2"
     dest: "{{ systemd_directory_path }}/rke2-{{ rke2_node_type }}.env"
     owner: 'root'
@@ -28,7 +28,7 @@
     - 'Restart the rke2 service'
 
 - name: "Create systemd service file rke2-{{ rke2_node_type }}.service"
-  template:
+  ansible.builtin.template:
     src: 'rke2-{{ rke2_node_type }}.service.j2'
     dest: "{{ systemd_directory_path }}/rke2-{{ rke2_node_type }}.service"
     owner: 'root'
@@ -43,10 +43,10 @@
 #
 
 - name: 'Make sure systemd is aware of all newly created files'
-  meta: flush_handlers
+  ansible.builtin.meta: flush_handlers
 
 - name: 'Start and enable the service'
-  service:
+  ansible.builtin.service:
     name: "rke2-{{ rke2_node_type }}.service"
     state: 'started'
     enabled: 'true'
