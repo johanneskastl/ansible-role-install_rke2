@@ -6,15 +6,21 @@
 
 - name: 'Run binary.yml'
   ansible.builtin.include_tasks: 'binary.yml'
+  when:
+    - not install_via_rpm | bool
 
 - name: 'Run configuration.yml'
   ansible.builtin.include_tasks: 'configuration.yml'
 
 - name: 'Run scripts.yml'
   ansible.builtin.include_tasks: 'scripts.yml'
+  when:
+    - not install_via_rpm | bool
 
 - name: 'Run service.yml'
   ansible.builtin.include_tasks: 'service.yml'
+  when:
+    - not install_via_rpm | bool
 
 - name: 'Run kubeconfig.yml'
   ansible.builtin.include_tasks: 'kubeconfig.yml'
