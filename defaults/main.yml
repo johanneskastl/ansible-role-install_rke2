@@ -9,6 +9,9 @@ install_via_rpm: false
 rke2_binary_download_name: 'rke2.linux-amd64'
 rke2_sha256sum_download_name: 'sha256sum-amd64.txt'
 
+# default package name
+rke2_package_name: 'rke2'
+
 # default for type of node
 rke2_node_type: 'server'
 uninstall_script_name: 'rke2-uninstall.sh'
