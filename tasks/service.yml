@@ -38,15 +38,5 @@
     - 'Trigger systemctl daemon-reload'
     - 'Restart the rke2 service'
 
-#
-# Start and enable the service
-#
-
 - name: 'Make sure systemd is aware of all newly created files'
   ansible.builtin.meta: flush_handlers
-
-- name: 'Start and enable the service'
-  ansible.builtin.service:
-    name: "rke2-{{ rke2_node_type }}.service"
-    state: 'started'
-    enabled: true

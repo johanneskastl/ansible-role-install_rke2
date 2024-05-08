@@ -22,6 +22,16 @@
   when:
     - not install_via_rpm | bool
 
+#
+# Start and enable the service
+#
+
+- name: 'Start and enable the service'
+  ansible.builtin.service:
+    name: "rke2-{{ rke2_node_type }}.service"
+    state: 'started'
+    enabled: true
+
 - name: 'Run kubeconfig.yml'
   ansible.builtin.include_tasks: 'kubeconfig.yml'
   when: 'rke2_node_type == "server"'
