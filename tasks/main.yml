@@ -9,6 +9,11 @@
   when:
     - not install_via_rpm | bool
 
+- name: 'Run rpm_installation.yml'
+  ansible.builtin.include_tasks: 'rpm_installation.yml'
+  when:
+    - install_via_rpm | bool
+
 - name: 'Run configuration.yml'
   ansible.builtin.include_tasks: 'configuration.yml'
 
