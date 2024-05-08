@@ -3,6 +3,7 @@
 
 # role logic
 fetch_token: 'false'
+install_via_rpm: false
 
 # default name used on amd64 architecture
 rke2_binary_download_name: 'rke2.linux-amd64'
