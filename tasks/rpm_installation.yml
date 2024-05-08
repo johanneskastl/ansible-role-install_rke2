@@ -1,7 +1,10 @@
 ---
 # install_rke2/tasks/rpm_installation.yml
 
-- name: 'Install the rke2 package'
+- name: 'Install the rke2 package without a reboot'
   ansible.builtin.package:
     name: "{{ rke2_package_name }}"
     state: 'present'
+  when:
+    - 'ansible_distribution != "openSUSE MicroOS"'
+    - 'ansible_distribution != "openSUSE Leap Micro"'
