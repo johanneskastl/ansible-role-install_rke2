@@ -8,3 +8,16 @@
   when:
     - 'ansible_distribution != "openSUSE MicroOS"'
     - 'ansible_distribution != "openSUSE Leap Micro"'
+
+- name: 'Install the rke2 package with a reboot on openSUSE MicroOS / openSUSE Leap Micro'
+  community.general.zypper:
+    name: "{{ rke2_package_name }}"
+    state: 'present'
+  when:
+    - '
+      ansible_distribution == "openSUSE MicroOS"
+      or ansible_distribution == "openSUSE Leap Micro"
+      '
+  notify:
+    - 'Reboot'
+    - 'Wait for the machine(s) to be ready again'
