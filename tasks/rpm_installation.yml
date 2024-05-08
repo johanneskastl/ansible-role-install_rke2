@@ -1,0 +1,7 @@
+---
+# install_rke2/tasks/rpm_installation.yml
+
+- name: 'Install the rke2 package'
+  ansible.builtin.package:
+    name: "{{ rke2_package_name }}"
+    state: 'present'
