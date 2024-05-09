@@ -142,7 +142,7 @@ etcd-snapshot-dir: "{{ etcd_snapshot_dir }}"
 etcd-snapshot-compress: "{{ etcd_snapshot_compress }}"
 {% endif %}
 {% if etcd_s3 is defined and etcd_s3 | bool %}
-etcd-s3: 'true'
+etcd-s3: true
 {% endif %}
 {% if etcd_s3_endpoint is defined %}
 etcd-s3-endpoint: "{{ etcd_s3_endpoint }}"
