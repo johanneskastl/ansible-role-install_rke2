@@ -33,6 +33,10 @@ wish:
 If you want to have a specific version of rke2 installed, setting `rke2_version`
 will do that (see the example playbook below).
 
+If you want to install rke2 via RPM, just set `install_via_rpm` to `true`. This
+will install the package called `rke2` using your system's package manager. The
+package name can be set using the `rke2_package_name` variable.
+
 In case you want to override the default locations, these two variables can be
 set:
 
