@@ -41,6 +41,7 @@
   ansible.builtin.include_tasks: 'kubeconfig.yml'
   when:
     - 'rke2_node_type == "server"'
+    - 'fetch_and_modify_kubeconfig_file | bool'
 
 - name: 'Run token.yml'
   ansible.builtin.include_tasks: 'token.yml'
