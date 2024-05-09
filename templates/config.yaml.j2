@@ -185,7 +185,7 @@ disable: "{{ disable_something }}"
 disable-scheduler: true
 {% endif %}
 {% if disable_cloud_controller is defined and disable_cloud_controller | bool %}
-disable-cloud-controller: 'true'
+disable-cloud-controller: true
 {% endif %}
 {% if disable_kube_proxy is defined and disable_kube_proxy | bool %}
 disable-kube-proxy: 'true'
