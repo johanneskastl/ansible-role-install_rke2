@@ -264,7 +264,7 @@ image-credential-provider-bin-dir: "{{ image_credential_provider_bin_dir }}"
 image-credential-provider-config: "{{ image_credential_provider_config }}"
 {% endif %}
 {% if protect_kernel_defaults is defined and protect_kernel_defaults | bool %}
-protect-kernel-defaults: 'true'
+protect-kernel-defaults: true
 {% endif %}
 {% if selinux is defined and selinux | bool %}
 selinux: true
