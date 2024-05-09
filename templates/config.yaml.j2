@@ -293,6 +293,13 @@ private-registry: "{{ private_registry }}"
 {% endif %}
 
 #
+# containerd
+#
+{% if disable_default_registry_endpoint is defined %}
+disable-default-registry-endpoint: "{{ disable_default_registry_endpoint }}"
+{% endif %}
+
+#
 # agent/networking
 #
 {% if node_ip is defined %}
