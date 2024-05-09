@@ -75,7 +75,7 @@ agent-token-file: "{{ agent_token_file }}"
 server: "{{ server_url }}"
 {% endif %}
 {% if cluster_reset is defined and cluster_reset | bool %}
-cluster-reset: 'true'
+cluster-reset: true
 {% endif %}
 
 #
