@@ -17,6 +17,9 @@ tls-san:
   - "{{ line }}"
 {% endfor %}
 {% endif %}
+{% if tls_san_security is defined %}
+tls-san-security: "{{ tls_san_security }}"
+{% endif %}
 
 #
 # data
