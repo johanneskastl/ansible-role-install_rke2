@@ -52,6 +52,9 @@ egress-selector-mode: "{{ egress_selector_mode }}"
 {% if servicelb_namespace is defined %}
 servicelb-namespace: "{{ servicelb_namespace }}"
 {% endif %}
+{% if cni is defined %}
+cni: "{{ cni }}"
+{% endif %}
 
 #
 # cluster
