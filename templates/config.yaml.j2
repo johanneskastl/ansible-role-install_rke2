@@ -182,7 +182,7 @@ etcd-s3-timeout: "{{ etcd_s3_timeout }}"
 disable: "{{ disable_something }}"
 {% endif %}
 {% if disable_scheduler is defined and disable_scheduler | bool %}
-disable-scheduler: 'true'
+disable-scheduler: true
 {% endif %}
 {% if disable_cloud_controller is defined and disable_cloud_controller | bool %}
 disable-cloud-controller: 'true'
