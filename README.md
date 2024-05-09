@@ -23,6 +23,13 @@ The only special ones are `disable_something` (the CLI option is called `disable
 but that makes a horrible variable name) and `server_url`, where the CLI option
 is called `server`...
 
+Using `disable_something`, you can disable the following components, if you
+wish:
+
+- rke2-coredns
+- rke2-ingress-nginx
+- rke2-metrics-server
+
 If you want to have a specific version of rke2 installed, setting `rke2_version`
 will do that (see the example playbook below).
 
