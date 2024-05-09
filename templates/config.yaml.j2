@@ -188,7 +188,7 @@ disable-scheduler: true
 disable-cloud-controller: true
 {% endif %}
 {% if disable_kube_proxy is defined and disable_kube_proxy | bool %}
-disable-kube-proxy: 'true'
+disable-kube-proxy: true
 {% endif %}
 {% if enable_servicelb is defined %}
 enable-servicelb: "{{ enable_servicelb }}"
