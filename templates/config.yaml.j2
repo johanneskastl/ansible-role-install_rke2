@@ -375,6 +375,9 @@ profile: "{{ profile }}"
 {% if audit_policy_file is defined %}
 audit-policy-file: "{{ audit_policy_file }}"
 {% endif %}
+{% if pod_security_admission_config_file is defined %}
+pod-security-admission-config-file: "{{ pod_security_admission_config_file }}"
+{% endif %}
 
 #
 # experimental
