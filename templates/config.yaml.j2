@@ -196,6 +196,9 @@ control-plane-resource-requests: "{{ control_plane_resource_requests }}"
 {% if control_plane_resource_limits is defined %}
 control-plane-resource-limits: "{{ control_plane_resource_limits }}"
 {% endif %}
+{% if control_plane_probe_configuration is defined %}
+control-plane-probe-configuration: "{{ control_plane_probe_configuration }}"
+{% endif %}
 {% if kube_apiserver_extra_mount is defined %}
 kube-apiserver-extra-mount: "{{ kube_apiserver_extra_mount }}"
 {% endif %}
