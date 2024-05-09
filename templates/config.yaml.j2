@@ -337,6 +337,9 @@ kube-apiserver-image: "{{ kube_apiserver_image }}"
 {% if kube_controller_manager_image is defined %}
 kube-controller-manager-image: "{{ kube_controller_manager_image }}"
 {% endif %}
+{% if cloud_controller_manager_image is defined %}
+cloud-controller-manager-image: "{{ cloud_controller_manager_image }}"
+{% endif %}
 {% if kube_proxy_image is defined %}
 kube-proxy-image: "{{ kube_proxy_image }}"
 {% endif %}
