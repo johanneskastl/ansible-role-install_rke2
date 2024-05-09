@@ -165,6 +165,9 @@ etcd-s3-region: "{{ etcd_s3_region }}"
 {% if etcd_s3_folder is defined %}
 etcd-s3-folder: "{{ etcd_s3_folder }}"
 {% endif %}
+{% if etcd_s3_insecure is defined %}
+etcd-s3-insecure: "{{ etcd_s3_insecure }}"
+{% endif %}
 
 #
 # components
