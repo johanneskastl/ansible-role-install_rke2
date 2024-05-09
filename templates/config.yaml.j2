@@ -291,6 +291,9 @@ snapshotter: "{{ snapshotter }}"
 {% if private_registry is defined %}
 private-registry: "{{ private_registry }}"
 {% endif %}
+{% if system_default_registry is defined %}
+system-default-registry: "{{ system_default_registry }}"
+{% endif %}
 
 #
 # containerd
@@ -328,9 +331,6 @@ kube-proxy-arg: "{{ kube_proxy_arg }}"
 #
 # image
 #
-{% if system_default_registry is defined %}
-system-default-registry: "{{ system_default_registry }}"
-{% endif %}
 {% if kube_apiserver_image is defined %}
 kube-apiserver-image: "{{ kube_apiserver_image }}"
 {% endif %}
