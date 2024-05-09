@@ -89,6 +89,13 @@ write-kubeconfig-mode: "{{ write_kubeconfig_mode }}"
 {% endif %}
 
 #
+# helm
+#
+{% if helm_job_image is defined %}
+helm-job-image: "{{ helm_job_image }}"
+{% endif %}
+
+#
 # flags
 #
 {% if kube_apiserver_arg is defined %}
