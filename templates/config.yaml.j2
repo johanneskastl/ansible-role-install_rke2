@@ -151,7 +151,7 @@ etcd-s3-endpoint: "{{ etcd_s3_endpoint }}"
 etcd-s3-endpoint-ca: "{{ etcd_s3_endpoint_ca }}"
 {% endif %}
 {% if etcd_s3_skip_ssl_verify is defined and etcd_s3_skip_ssl_verify | bool %}
-etcd-s3-skip-ssl-verify: 'true'
+etcd-s3-skip-ssl-verify: true
 {% endif %}
 {% if etcd_s3_access_key is defined %}
 etcd-s3-access-key: "{{ etcd_s3_access_key }}"
