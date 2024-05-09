@@ -110,6 +110,9 @@ kube-controller-manager-arg: "{{ kube_controller_manager_arg }}"
 {% if kube_scheduler_arg is defined %}
 kube-scheduler-arg: "{{ kube_scheduler_arg }}"
 {% endif %}
+{% if kube_cloud_controller_manager_arg is defined %}
+kube-cloud-controller-manager-arg: "{{ kube_cloud_controller_manager_arg }}"
+{% endif %}
 
 #
 # db
