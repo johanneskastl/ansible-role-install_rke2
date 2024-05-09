@@ -39,7 +39,8 @@
 
 - name: 'Run kubeconfig.yml'
   ansible.builtin.include_tasks: 'kubeconfig.yml'
-  when: 'rke2_node_type == "server"'
+  when:
+    - 'rke2_node_type == "server"'
 
 - name: 'Run token.yml'
   ansible.builtin.include_tasks: 'token.yml'
