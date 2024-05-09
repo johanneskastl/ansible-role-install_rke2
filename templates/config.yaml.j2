@@ -282,6 +282,9 @@ lb-server-port: "{{ lb_server_port }}"
 {% if container_runtime_endpoint is defined %}
 container-runtime-endpoint: "{{ container_runtime_endpoint }}"
 {% endif %}
+{% if default_runtime is defined %}
+default-runtime: "{{ default_runtime }}"
+{% endif %}
 {% if snapshotter is defined %}
 snapshotter: "{{ snapshotter }}"
 {% endif %}
