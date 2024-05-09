@@ -135,6 +135,9 @@ etcd-snapshot-retention: "{{ etcd_snapshot_retention }}"
 {% if etcd_snapshot_dir is defined %}
 etcd-snapshot-dir: "{{ etcd_snapshot_dir }}"
 {% endif %}
+{% if etcd_snapshot_compress is defined %}
+etcd-snapshot-compress: "{{ etcd_snapshot_compress }}"
+{% endif %}
 {% if etcd_s3 is defined and etcd_s3 | bool %}
 etcd-s3: 'true'
 {% endif %}
