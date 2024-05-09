@@ -124,7 +124,7 @@ cluster-reset-restore-path: "{{ cluster_reset_restore_path }}"
 etcd-expose-metrics: true
 {% endif %}
 {% if etcd_disable_snapshots is defined and etcd_disable_snapshots | bool %}
-etcd-disable-snapshots: 'true'
+etcd-disable-snapshots: true
 {% endif %}
 {% if etcd_snapshot_name is defined %}
 etcd-snapshot-name: "{{ etcd_snapshot_name }}"
