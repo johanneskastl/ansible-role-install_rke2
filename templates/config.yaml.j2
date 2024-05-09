@@ -382,14 +382,6 @@ pod-security-admission-config-file: "{{ pod_security_admission_config_file }}"
 #
 # experimental
 #
-
-#
-# experimental/agent
-#
 {% if kubelet_path is defined %}
 kubelet-path: "{{ kubelet_path }}"
 {% endif %}
-
-#
-# experimental/cluster
-#
