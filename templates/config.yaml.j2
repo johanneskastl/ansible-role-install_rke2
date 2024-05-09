@@ -121,7 +121,7 @@ kube-cloud-controller-manager-arg: "{{ kube_cloud_controller_manager_arg }}"
 cluster-reset-restore-path: "{{ cluster_reset_restore_path }}"
 {% endif %}
 {% if etcd_expose_metrics is defined and etcd_expose_metrics | bool %}
-etcd-expose-metrics: 'true'
+etcd-expose-metrics: true
 {% endif %}
 {% if etcd_disable_snapshots is defined and etcd_disable_snapshots | bool %}
 etcd-disable-snapshots: 'true'
