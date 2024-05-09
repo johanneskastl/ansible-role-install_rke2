@@ -2,6 +2,7 @@
 # install_rke2/defaults/main.yml
 
 # role logic
+fetch_and_modify_kubeconfig_file: true
 fetch_token: 'false'
 install_via_rpm: false
 
