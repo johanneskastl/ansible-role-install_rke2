@@ -190,8 +190,8 @@ disable-cloud-controller: true
 {% if disable_kube_proxy is defined and disable_kube_proxy | bool %}
 disable-kube-proxy: true
 {% endif %}
-{% if enable_servicelb is defined %}
-enable-servicelb: "{{ enable_servicelb }}"
+{% if enable_servicelb is defined and not enable_servicelb | bool %}
+enable-servicelb: false
 {% endif %}
 {% if control_plane_resource_requests is defined %}
 control-plane-resource-requests: "{{ control_plane_resource_requests }}"
