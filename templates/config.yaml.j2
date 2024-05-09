@@ -168,6 +168,9 @@ etcd-s3-folder: "{{ etcd_s3_folder }}"
 {% if etcd_s3_insecure is defined %}
 etcd-s3-insecure: "{{ etcd_s3_insecure }}"
 {% endif %}
+{% if etcd_s3_timeout is defined %}
+etcd-s3-timeout: "{{ etcd_s3_timeout }}"
+{% endif %}
 
 #
 # components
