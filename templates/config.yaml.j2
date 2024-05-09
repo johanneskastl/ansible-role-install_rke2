@@ -46,6 +46,9 @@ cluster-dns: "{{ cluster_dns }}"
 {% if cluster_domain is defined %}
 cluster-domain: "{{ cluster_domain }}"
 {% endif %}
+{% if egress_selector_mode is defined %}
+egress-selector-mode: "{{ egress_selector_mode }}"
+{% endif %}
 
 #
 # cluster
