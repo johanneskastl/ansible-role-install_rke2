@@ -263,6 +263,15 @@ image-credential-provider-bin-dir: "{{ image_credential_provider_bin_dir }}"
 {% if image_credential_provider_config is defined %}
 image-credential-provider-config: "{{ image_credential_provider_config }}"
 {% endif %}
+{% if protect_kernel_defaults is defined and protect_kernel_defaults | bool %}
+protect-kernel-defaults: 'true'
+{% endif %}
+{% if selinux is defined and selinux | bool %}
+selinux: 'true'
+{% endif %}
+{% if lb_server_port is defined and lb_server_port | bool %}
+lb-server-port: "{{ lb_server_port }}"
+{% endif %}
 
 #
 # agent/runtime
@@ -301,19 +310,6 @@ kubelet-arg:
 {% endif %}
 {% if kube_proxy_arg is defined %}
 kube-proxy-arg: "{{ kube_proxy_arg }}"
-{% endif %}
-
-#
-# agent/node
-#
-{% if protect_kernel_defaults is defined and protect_kernel_defaults | bool %}
-protect-kernel-defaults: 'true'
-{% endif %}
-{% if selinux is defined and selinux | bool %}
-selinux: 'true'
-{% endif %}
-{% if lb_server_port is defined and lb_server_port | bool %}
-lb-server-port: "{{ lb_server_port }}"
 {% endif %}
 
 #
