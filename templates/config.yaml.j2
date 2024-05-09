@@ -382,6 +382,9 @@ pod-security-admission-config-file: "{{ pod_security_admission_config_file }}"
 #
 # experimental
 #
+{% if embedded_registry is defined %}
+embedded-registry: "{{ embedded_registry }}"
+{% endif %}
 {% if kubelet_path is defined %}
 kubelet-path: "{{ kubelet_path }}"
 {% endif %}
